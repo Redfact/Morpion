@@ -13,9 +13,8 @@ class Board
 	def display_board
 		@board_case.each{|sub|
 			#print @board_case[i],"\n"
-			print "         "
-			#print "["
-
+			#print "         "
+			print "".center(37)
 			sub.each{|i| print "| #{i} ".colorize(:yellow)}
 			puts '|'.colorize(:yellow)
 		}
@@ -23,7 +22,9 @@ class Board
 
 	def add_case(player)
 		puts
-		print " "*6,player.name.colorize(:light_green)," a vous de jouer ! ","\n"
+		print "".center(28)
+		print player.name.colorize(:light_green)," a vous de jouer ! ","\n"
+		print "".center(28)
 		input = gets.chomp
 		set_board(input,player.symb)
 	end
